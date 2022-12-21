@@ -1,0 +1,215 @@
+  $drk: #202020;
+  $orng: #ff6e30;
+  $wht: #ffffff;
+  $lghtGrey: #999999;
+  $maxWidth: 1920;
+  $fontTT: "TTFirsNeue", sans-serif;
+  $fontRob: "Roboto", sans-serif;
+  $orngActv: #ce4307;
+  $orngFcs: #bc572b;
+
+
+
+.projects {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  &__title {
+    color: $drk;
+    margin-bottom: 12px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+      row-gap: 30px;
+      column-gap: 30px;
+      grid-template-areas:
+    "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4 item-4 item-4 item-4"
+    "item-5 item-5 item-5 item-5 item-5 item-5 item-6 item-6 item-6 item-7 item-7 item-7";
+  }
+  &__upper{
+    max-width: 292px;
+  }
+  &__item_1 {
+    grid-area:item-1;
+  }
+  &__item_2 {
+    grid-area:item-2;
+  }
+  &__item_3 {
+    grid-area:item-3;
+  }
+  &__item_4 {
+    grid-area:item-4;
+  } 
+  &__item_5 {
+    grid-area:item-5;
+  }
+  &__item_6 {
+    grid-area:item-6;
+  }
+  &__item_7 {
+    grid-area:item-7;
+  }
+
+  &__item{
+    position: relative;
+    &_huge {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 22px;
+      padding-bottom: 34px;
+      // padding-bottom: 35px;
+      padding-left: 30px;
+      min-height: 300px;
+    }
+  }
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    svg {
+      fill: #999999;
+    }
+    .projects__content {
+      display: block;
+      color: $drk;
+    }
+  }
+  &__img {
+    margin-bottom: 16px;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__date {
+    margin-bottom: 1px;
+  }
+  &__calendar {
+    fill: #999999;
+    display: inline-block;
+  }
+  &__day {
+    color: #999999;
+  }
+  &__hashtag {
+    top: 7px;
+    right: 7px;
+  }
+  &__heading {
+    font-family: $fontTT;
+    font-size: 26px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+  &__item_4{
+    background: url(../img/projects/card-4_raw.jpg) center / cover no-repeat;
+    
+  }
+  &__item_5{
+    background: url(../img/projects/card-7_raw.jpg) center / cover no-repeat ;
+  }
+
+  &__btn {
+    align-self: flex-start;
+    transition: background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
+    &:hover {
+      background-color: $orng;
+    }
+    &:focus {
+      background-color: $orngFcs;
+    }
+    &:active {
+      outline: 3px solid $orngActv;
+      background-color: $orngActv;
+    }
+  }
+  &__headline {
+    font-family: $fontRob;
+    color: $drk;
+    font-size: 16px;
+    line-height: 22px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    &:hover {
+      color: $orng;
+    }
+    &:focus {
+      color: $wht;
+      background-color: $orngFcs;
+    }
+    &:active {
+      color: $orngActv;
+      background-color: transparent;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+     
+      &__list{
+        grid-template-columns: repeat(16, 1fr);
+        row-gap: 16px;
+        grid-template-areas:
+      "item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2 item-3 item-3 item-3 item-3 item-3 item-3 item-3 item-3"
+      "item-4 item-4 item-4 item-4 item-4 item-4 item-4 item-4 item-4 item-4 item-6 item-6 item-6 item-6 item-6 item-6"
+      "item-7 item-7 item-7 item-7 item-7 item-7 item-5 item-5 item-5 item-5 item-5 item-5 item-5 item-5 item-5 item-5";
+      }  
+
+    &__item_4{
+      background: url(../img/projects/card-4_1024.jpg) center / cover no-repeat;
+      
+    }
+    &__item_5{
+      background: url(../img/projects/card-7_1024.jpg) center / cover no-repeat ;
+    }
+    &__figcaption {
+      justify-content: space-between;
+    }
+    &__img {
+      margin-bottom: 18px;
+    }
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .projects {
+    &__li {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    &__list {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      row-gap: 30px;
+      grid-template-areas:
+    "item-1 item-1 item-2 item-2 item-3 item-3"
+    "item-4 item-4 item-4 item-4 item-4 item-4"
+    "item-7 item-7 item-7 item-6 item-6 item-6"
+    "item-5 item-5 item-5 item-5 item-5 item-5";
+    }
+  
+  }
+}
+
+
+@media (max-width: 400px) {
+  .projects{
+    &__list {
+      display: grid;
+        gap: 28px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "item-1"
+      "item-2"
+      "item-3"
+      "item-4"
+      "item-5"
+      "item-6"
+      "item-7";
+    }
+  }
+}
